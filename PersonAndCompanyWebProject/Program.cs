@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-//builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString: "DefaultConnection"));
+builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 
 var app = builder.Build();
 
