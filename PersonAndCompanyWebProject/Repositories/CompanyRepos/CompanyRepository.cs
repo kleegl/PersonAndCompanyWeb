@@ -22,6 +22,7 @@ namespace PersonAndCompanyWebProject.Repositories.CompanyRepos
             try
             {
                 _dbContext.Companies.Add(company);
+                _dbContext.SaveChanges();
                 return true;
             }
             catch (Exception ex)

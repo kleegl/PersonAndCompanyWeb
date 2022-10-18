@@ -1,6 +1,6 @@
 ﻿@{
     @using PersonAndCompanyWebProject.Models;
-    @model IEnumerable<Company>;
+    @model IEnumerable<Company>
 }
 
 <!DOCTYPE html>
@@ -17,12 +17,14 @@
             <th>Name</th>
             <th>County</th>
         </tr>
-        @*@foreach (var comp in Model)
+        @foreach (var comp in Model)
         {
-            <td>@comp.Id</td>
-            <td>@comp.Name</td>
-            <td>@comp.Country</td>
-        }*@
+            <tr>
+                <td>@comp.Id</td>
+                <td>@comp.Name</td>
+                <td>@comp.Country</td>
+            </tr>
+        }
     </table>
 </body>
 </html>

@@ -27,11 +27,12 @@ namespace PersonAndCompanyWebProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Company newCompany)
+        public IActionResult Create(int id, string name, string country)
         {
-            _companyRepository.Create(newCompany);
+            _companyRepository.Create(new Company() { Id = id, Name = name, Country = country});
             Response.StatusCode = 200;
-            return View("ShowAll");
+            //return View("ShowAll");
+            return RedirectToAction("ShowAll");
         }
     }
 }
