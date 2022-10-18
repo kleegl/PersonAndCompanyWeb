@@ -1,0 +1,33 @@
+﻿@{
+    @using PersonAndCompanyWebProject.Models;
+    @model IEnumerable<Company>;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show All</title>
+</head>
+<body>
+    <h2>Show All Home Controller</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var comp in Model)
+            {
+                <tr>
+                    <td>@comp.Id</td>
+                    <td>@comp.Name</td>
+                    <td>@comp.Country</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
