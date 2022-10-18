@@ -16,5 +16,18 @@ namespace PersonAndCompanyWebProject.Repositories.CompanyRepos
         {
             return _dbContext.Companies.ToList();
         }
+
+        public bool Create(Company company)
+        {
+            try
+            {
+                _dbContext.Companies.Add(company);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
